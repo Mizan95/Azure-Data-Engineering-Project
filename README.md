@@ -32,6 +32,8 @@ To house the entire project, I set up a Virtual Machine on my computer using Hyp
 
 * **Microsoft Power BI** - to visually analyse the data from Azure Synapse Analytics using Star Schema method
 
+* **Microsoft Hyper-V** - to create a virtual machine for the project
+
 ## ETL Data Workflow on Medallion Architecture
 Below is a description of the end-to-end workflow based on the Medallion architecture. The code files can be accessed at the end of each numbered section.
 
