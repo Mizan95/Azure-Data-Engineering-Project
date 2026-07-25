@@ -6,7 +6,7 @@ In  this Azure data engineering pipeline project, I set out to build a pipeline 
 
 The full data pipeline diagram can be seen below:
 
-![image_data-pipelineV2.png](C:\Users\Mizan\Documents\SQL_Data-Engineering-Project\files_project_data-engineering\image_data-pipelineV2.png)
+![image of Azure data pipeline ](images\image_data-pipelineV2.png)
 
 The pipeline ingested data from an on-prem SQL database into Azure Data Lake using the Medallion architecture. Data transformation and transfer within the Medallion architecture was done with Azure Databricks (PySpark). Thereafter, the data was loaded into Azure Synapse Analytics using a dynamic SQL script. Finally, I used Power BI to connect to Azure Synapse Analytics and create a dashboard.
 
@@ -27,17 +27,16 @@ The pipeline ingested data from an on-prem SQL database into Azure Data Lake usi
 
 * Microsoft Power BI - to visually analyse the data from Azure Synapse Analytics using Star Schema method
 
-## Medallion Data Workflow
+## ETL Data Workflow on Medallion Architecture
+Below is a description of the end-to-end workflow based on the Medallion architecture. The code files can be accessed at the end of each numbered section.
 
 1. **Ingestion (On-Prem to Bronze)**: 
 
    * Azure Data Factory ingests data from SQL Server
 
-   * Data is landed raw and converted to Parquet files in the Bronze Storage Container.
+   * Data is extracted raw and converted to Parquet files in the Bronze Storage Container.
 
-   * Data is landed raw and converted to Parquet files in the Bronze Storage Container.
-
-     <mark>Raw JSON output file for this ingestion activity can be accessed here:</mark>
+      Raw JSON output file for this ingestion activity can be accessed [here](code\datafactory\Formatted code\FORMATTED_copy_all_tables_from_SQL-onPrem_copy.json)
 
 2. **Cleansing (Bronze to Silver)**:
 
@@ -45,12 +44,13 @@ The pipeline ingested data from an on-prem SQL database into Azure Data Lake usi
    * First task is that it applies standard formatting to date column of YYYY-MM-DD
    * Second task is that it enforces the data column to be a Python date object
    * Third task is that it converts all database files from Parquet to Delta and transfers them over to Silver container
-   * <mark>Jupyter Notebook file for this cleansing activity can be accessed here:</mark>
+   
+      The Jupyter Notebook file for this cleansing activity can be accessed [here](code\databricks\bronze-to-silver.ipynb)
 
 3. **Final transformation (Silver to Gold)**:
 
    * Azure Databricks (PySpark ) reads the Silver data and applies standard column name formatting from Camelcase to Snake case
-   * <mark>Jupyter Notebook file for this cleansing activity can be accessed here:</mark>
+   * Jupyter Notebook file for this cleansing activity can be accessed [here](code\databricks\silver-to-gold.ipynb)
 
 4. **Warehouse Loading & Reporting**:
 
