@@ -9,7 +9,11 @@ The full data pipeline diagram can be seen below:
 
 ![image of Azure data pipeline ](images/image_data-pipelineV2.png)
 
-The pipeline ingested data from an on-prem SQL database into Azure Data Lake using the Medallion architecture. Data transformation and transfer within the Medallion architecture was done with Azure Databricks (PySpark). Thereafter, the data was loaded into Azure Synapse Analytics using a dynamic SQL script. Finally, I used Power BI to connect to Azure Synapse Analytics and create a dashboard.
+The pipeline ingested data from an on-prem SQL database into Azure Data Lake using the Medallion architecture. Data transformation and transfer within the Medallion architecture was done with Azure Databricks (PySpark). 
+
+Thereafter, the data was loaded into Azure Synapse Analytics using a dynamic SQL script. Finally, I used Power BI to connect to Azure Synapse Analytics and create a data analytics dashboard.
+
+To house the entire project, I set up a Virtual Machine on my computer using Hyper-V. This provided a consistent and isolated environment to run the project. 
 
 
 ## Tools I used
