@@ -43,7 +43,7 @@ Below is a description of the end-to-end workflow based on the Medallion archite
 
    * Data is extracted raw and converted to Parquet files in the Bronze Storage Container.
 
-   Raw JSON output file for this ingestion activity can be accessed [here](code/datafactory/Raw-output/RAW_copy_all_tables_from_SQL-onPrem.json)
+   The JSON output file for this ingestion activity can be accessed [here](code/datafactory/Formatted%20code/FORMATTED_copy_all_tables_from_SQL_copy.json)
 
 
 
@@ -60,13 +60,13 @@ Below is a description of the end-to-end workflow based on the Medallion archite
 
    * Azure Databricks (PySpark ) reads the Silver data and applies standard column name formatting from Camelcase to Snake case
    
-   Jupyter Notebook file for this cleansing activity can be accessed [here](code/databricks/silver-to-gold.ipynb)
+   The Jupyter Notebook file for this cleansing activity can be accessed [here](code/databricks/silver-to-gold.ipynb)
 
 4. **Warehouse Loading & Reporting**:
 
    * In Azure Synapse Analytics, I executed Dynamic SQL scripts to create Views of each Delta table ensuring original data integrity.
 
-   SQL file for this loading activity can be accessed [here](code/azure-synapse/gold_create_views_for_all_tables.sql)
+   The SQL file for this loading activity can be accessed [here](code/azure-synapse/gold_create_views_for_all_tables.sql)
 
    * For visual data analysis, I then connected Microsoft Power BI to Azure Synapse Analytics via the Azure Synapse connector. I then created relationships within all tables according to the Star Schema method. Whilst also creating a Date Table as per standard Data Analyst practice.
    
@@ -81,7 +81,7 @@ Below is a description of the end-to-end workflow based on the Medallion archite
 
 
 ## Conclusion
-In conclusion, this Azure Data Pipeline project was a great opportunity to practise building a _programmatic_ data pipeline. With my background as a Data Analyst, I initally did all of my ETL work in Power BI. That already gave me a solid grasp of data pipeline principles and allowed me to easily ascertain where all the steps of this project fit in the bigger picture of the ETL process.
+In conclusion, this Azure Data Pipeline project was a great opportunity to practise building a _programmatic_ data pipeline. With my background as a Data Analyst, I initally did all of my ETL work in Power BI. That already gave me a solid grasp of data pipeline principles and allowed me to easily ascertain where all the steps of this data engineering project fit in the bigger picture of the ETL process.
 For example: 
 - Data Factory was where the Extraction took place.
 - Databricks was where the Transformation took place.
