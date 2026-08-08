@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In  this Azure data engineering pipeline project, I set out to build a data pipeline moving data from an on-prem SQL database through Azure Data Lake and ending in Microsoft Power BI. I used the public Microsoft dataset named 'Adventure Works 2025'. This is a fictional dataset which represents sales data of a sports retailer called Adventure Works. 
+In  this Azure data engineering pipeline project, I set out to build an automated data pipeline moving data from an on-prem SQL database through Azure Data Lake and ending in Microsoft Power BI. I used the public Microsoft dataset named 'Adventure Works 2025'. This is a fictional dataset which represents sales data of a sports retailer called Adventure Works. 
 The pipeline was orchestrated using Azure Data Factory.
 
 The full data pipeline diagram can be seen below:
